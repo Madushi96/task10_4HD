@@ -1,0 +1,66 @@
+<%- include('header'); -%>
+
+    <header>
+        <div class="container-fluid bg-primary-subtle">
+            <div class="col-sm-8 mx-auto text-center py-2">
+                <h1 class="display-4">Creating and Awesome website</h1>
+                <p class="lead ">Here are some quick guides on how you can implement awesome features to your website</p>
+            </div>
+        </div>
+    </header>
+<main>
+    <div class="container">
+    <h1>Feature 1</h1>
+    <p>Implementing argon2 to hash passwords before storing them in the database. Let's check how you can implement this awesome feature in your website. </p>
+    <h3>Step 1</h3>
+    <p>Open terminal in your project and install argon2 using "npm install argon2" command. </p>
+
+    <h3>Step 2</h3>
+    <p>Run the command "npm install sqlite3" to install sqlite3 to setup database.</p>
+
+    <h3>Step 3</h3>
+    <p>Create a new file called database.js to handle the database connection and queries. 
+        Add the below code to create the login table and store the user credentials</p>
+    <img src="/images/image1.png" alt="setting up database" style="width: 60%">
+    <h3>Step 4</h3>
+    <p>Create login form using ejs.</p>
+    <h3>Step 5</h3>
+    <p>Update the Server to Store User Data. Lets modify the POST route for /login to store credentials. 
+        (Make sure to import the SQLite database connection)</p>
+    <img src="/images/image2.png" alt="handling form submission" style="width: 60%; ">
+    <h3>Lets see how this works</h3>
+    <h4>Login Form</h4>
+    <p>This is a simple user login form. Enter your username and password. </p>
+    <div id="formContainer">
+        <form action="/login" method="POST">
+            <div class="row mb-3">
+                <label for="username" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">
+                    Username:
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username"  name="username" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 pt-2 col-form-label-sm text-sm-end">Password:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm mx-auto d-flex justify-content-center ">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>    
+        </form>
+        <h5 class="mt-4">Retrieve Users</h5>
+        <p>Click the below button to view users and their hashed passwords.</p>
+        <div class="d-grid gap-5d-md-flex justify-content-md-center mb-4">
+            <a href="/users">
+                <button class="btn btn-success" id="usersBtn">View Users</button>
+            </a>
+        </div>
+    </div>
+    </div>
+</main>
+<%- include('footer'); -%>
